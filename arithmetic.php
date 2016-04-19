@@ -4,67 +4,72 @@
 
 function add($a, $b)
 {
-    isNumeric($a, $b);
-    if(true){
+    if(isNumeric($a, $b)){
         return $a + $b;
     } else {
-        return "ERROR: Both arguments must be numbers\n";  
+        return errorFunction($a, $b);
     }
 }
 
 function subtract($a, $b)
 {
-    isNumeric($a, $b);
-    if(true){
+    if(isNumeric($a, $b)){
         return $a - $b;
     } else {
-        return "ERROR: Both arguments must be numbers\n";  
+        return errorFunction($a, $b);  
     }
 }
 
 function multiply($a, $b)
 {
-    isNumeric($a, $b);
-    if(true){
+    if(isNumeric($a, $b)){
         return $a * $b;
     } else {
-        return "ERROR: Both arguments must be numbers\n";   
+        return errorFunction($a, $b);   
     }
 }
 
 function divide($a, $b)
 {
-    isNumeric($a, $b);
-    if(true){
-        return $a / $b;
+    // if user is trying to divide by zero return error message
+    if($b == 0){
+        return "Error: Cant divide by 0.";   
+    // otherwise continue to check if its numeric 
     } else {
-        return "ERROR: Both arguments must be numbers\n";   
+        // if its numeric do a/b
+        if(isNumeric($a, $b)){
+            return $a / $b;
+        // otherwise give this error message 
+        } else {
+            return errorFunction($a, $b);   
+        }
     }
 }
 
 function modulas($a, $b)
 {
-    isNumeric($a, $b);
-    if(true){
+    if(isNumeric($a, $b)){
         return $a % $b;
     } else {
-        return "ERROR: Both arguments must be numbers\n";   
+        return errorFunction($a, $b);  
     }
 }
 
+// function that checks to see if a and b are numeric.  
+// if either is
 function isNumeric($a, $b)
 {
     return is_numeric($a) || is_numeric($b);
 }
 
-// function errorFunction()
-// {
-//     return "ERROR: Both arguments must be numbers\n";
-// }
+function errorFunction($a, $b)
+{
+    return "ERROR: Arguments \$a and \$b must be numbers";
+}
 
 
-echo add(6,6) .  PHP_EOL;
+echo add('shits','broke') .  PHP_EOL;
 echo subtract(6,4) . PHP_EOL;
 echo multiply(6,4) . PHP_EOL;
-echo divide(6,3) . PHP_EOL;
-echo modulas(6,5) . PHP_EOL;
+echo divide(6,0) . PHP_EOL;
+echo modulas(6,4) . PHP_EOL;
