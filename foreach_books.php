@@ -1,5 +1,6 @@
 <?php
 
+
 $books = array(
     'The Hobbit' => array(
         'published' => 1937,
@@ -25,11 +26,11 @@ $books = array(
 
 
 foreach($books as $booksKeys => $booksValues){
-    echo "Title: $booksKeys\n";  
-    foreach($booksValues as $individualBooksKey => $individualBooksValue){
-        // if ($individualBooksValue <= 1950){
-        echo "Above book: $individualBooksKey is $individualBooksValue\n";
+    if ($booksValues['published'] <= 1950){
+        echo "Title: $booksKeys\n";  
+        foreach($booksValues as $individualBooksKey => $individualBooksValue){
+            echo "Above book: $individualBooksKey is $individualBooksValue\n";
         }
-    }
         echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" . PHP_EOL;
+    }
 }
