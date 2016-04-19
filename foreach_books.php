@@ -24,10 +24,14 @@ $books = array(
     )
 );
 
-
+// the array of books has keys(each book) and values(each title)
 foreach($books as $booksKeys => $booksValues){
+    // if the key(published)  within each books values is less made before 1950 
+    // it will run the entire loop that itirates all the information
     if ($booksValues['published'] <= 1950){
+        // the loop that runs if above is correct
         echo "Title: $booksKeys\n";  
+        // look at each key within each book  and prints each value
         foreach($booksValues as $individualBooksKey => $individualBooksValue){
             echo "Above book: $individualBooksKey is $individualBooksValue\n";
         }
