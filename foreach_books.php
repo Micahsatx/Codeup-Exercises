@@ -34,3 +34,17 @@ foreach($books as $booksKeys => $booksValues){
         echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" . PHP_EOL;
     }
 }
+
+
+foreach($books as $booksKeys => $booksValues){
+        echo "Title: $booksKeys\n";
+        foreach($booksValues as $individualBooksKey => $individualBooksValue){
+            echo "This book: $individualBooksKey is $individualBooksValue\n";
+        }
+    if($booksValues['pages'] >= 500){   
+        echo "Buckle down, this is a long book\n";
+    } else {
+        echo "Good book, but it is pretty short.\n";
+    }
+        echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" . PHP_EOL;
+}
