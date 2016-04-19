@@ -4,8 +4,10 @@
 
 function add($a, $b)
 {
+    // check to see if a and b are numeric.  if so run the return code
     if(isNumeric($a, $b)){
         return $a + $b;
+    // otherwise run the errorfunction that returns the error message
     } else {
         return errorFunction($a, $b);
     }
@@ -13,8 +15,10 @@ function add($a, $b)
 
 function subtract($a, $b)
 {
+    // check to see if a and b are numeric.  if so run the return code
     if(isNumeric($a, $b)){
         return $a - $b;
+    // otherwise run the errorfunction that returns the error message    
     } else {
         return errorFunction($a, $b);  
     }
@@ -22,8 +26,10 @@ function subtract($a, $b)
 
 function multiply($a, $b)
 {
+    // check to see if a and b are numeric.  if so run the return code
     if(isNumeric($a, $b)){
         return $a * $b;
+    // otherwise run the errorfunction that returns the error message
     } else {
         return errorFunction($a, $b);   
     }
@@ -39,7 +45,8 @@ function divide($a, $b)
         // if its numeric do a/b
         if(isNumeric($a, $b)){
             return $a / $b;
-        // otherwise give this error message 
+        // if provided values are not numeric then run errorFunction which spits
+        // out error message
         } else {
             return errorFunction($a, $b);   
         }
@@ -48,20 +55,21 @@ function divide($a, $b)
 
 function modulas($a, $b)
 {
+    // check to see if a and b are numeric.  if so run the return code
     if(isNumeric($a, $b)){
         return $a % $b;
+    // otherwise run the errorfunction that returns the error message
     } else {
         return errorFunction($a, $b);  
     }
 }
 
 // function that checks to see if a and b are numeric.  
-// if either is
 function isNumeric($a, $b)
 {
     return is_numeric($a) || is_numeric($b);
 }
-
+// function returns the error message.
 function errorFunction($a, $b)
 {
     return "ERROR: Arguments \$a and \$b must be numbers";
