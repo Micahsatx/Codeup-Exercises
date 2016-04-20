@@ -50,15 +50,15 @@ function sortingArrays($companies)
     // companies is an array of all the companies
     // the key is the name of each company.
     // $names is the values within each company (all the names)
-    foreach ($companies as $key => $names){
+    foreach ($companies as $companyName => $names){
         // now sort all the values (names) within each company.  but that is just a copy
         // next we will assign that copy to something
         sort($names);
-        // this is where $names gets assigned to each $companies[key].  
+        // this is where $names gets assigned to each $companies[companyName].  
         // think of it like the copy of the sorted list of names
-        // is now assigned to each company as its key.  its keys are the names
+        // is now assigned to each company as its companyName.  its keys are the names
         // within each company
-        $companies[$key] = $names; 
+        $companies[$companyName] = $names; 
     }
     // now that the interals are sort, sort the company names themselves.
     arsort($companies);
