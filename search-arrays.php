@@ -28,17 +28,17 @@ function searchArray($person, $names)
 function compareArrays($names, $compare)
 {
     // give an initial value to a new variable
-    $numberOfDifferences = 0;
+    $numberOfThingsInCommon = 0;
     // each itiration compares a $person(i name in the array) to the array of $names.
     foreach($names as $person){
         // if that person is in the $compare array then label it true
         // then run the code that increases the index of $numberOfDifferences
         if (searchArray($person, $compare) == true) {
-            $numberOfDifferences++ ;
+            $numberOfThingsInCommon++ ;
         }
     }
     // return the value outside the if statement
-    return $numberOfDifferences;
+    return $numberOfThingsInCommon;
 }
 // so now run the second function, that will inturn call the searchArray function
 echo compareArrays($names, $compare) . PHP_EOL;
