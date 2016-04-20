@@ -50,20 +50,24 @@ echo inspect($array1) . PHP_EOL;
 echo 'Inspecting $array2' . PHP_EOL;
 echo inspect($array2) . PHP_EOL;
 
-function inspect($var)
+function inspect($elementToInspect)
 {
-    if (is_string($var)){ 
-        return "This is a string with the value \"{$var}\"";
-    } elseif (is_bool($var)){
-        return "This is a bool with a value of " . ($var ? 'true' : 'false');
-    } elseif (is_array($var)){
-        return "The value is an " . ($var ? 'array' : 'empty array');
-    } elseif (is_null($var)){
+    if (is_string($elementToInspect)){ 
+        return "This is a string with the value \"{$elementToInspect}\"";
+    } elseif (is_bool($elementToInspect)){
+        // ternary operator that check if it is a bool
+        // if its a bool it will print true if not print false
+        return "This is a bool with a value of " . ($elementToInspect ? 'true' : 'false');
+    } elseif (is_array($elementToInspect)){
+        // if its an array with value print array
+        // if its an empty array print empty array
+        return "The value is an " . ($elementToInspect ? 'array' : 'empty array');
+    } elseif (is_null($elementToInspect)){
         return "The value is NULL";
-    } elseif (is_float($var)){
-        return "This has a value of " . number_format($var, 1);
-        // number_format($sum,2);
-    } elseif (is_int($var)){
-        return "This has a value of {$var}";
+    } elseif (is_float($elementToInspect)){
+        // change the format of the ElementToInspect to have 1 decimal point.  (prints 0.0 and 14.4)
+        return "This has a value of " . number_format($elementToInspect, 1);
+    } elseif (is_int($elementToInspect)){
+        return "This has a value of {$elementToInspect}";
     }
 };
