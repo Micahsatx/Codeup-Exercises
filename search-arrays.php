@@ -9,10 +9,10 @@ $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 // check each person within the names array.  Tina in the array $names, dana, mike, amy, etc
 // the first function searchArray only searches one array and essentially assigns each $person
 // a value of true or false.
-function searchArray($person, $names)
+function searchArray($person, $array)
 {
     // search the people within the array names.   searches all 5
-    $result = array_search($person, $names);
+    $result = array_search($person, $array);
     // null, 0 , & empty string all get converted to false.  therefore we say
     //  if 0 !== false then run the code below.   otherwise leaving off
     // !== will convert 0 to false, then false == false and any code wont run
@@ -24,16 +24,16 @@ function searchArray($person, $names)
 }
 
 // now that searchArray assigned true or false to each $person
-// we can compare the two arrays, $names & $compare
-function compareArrays($names, $compare)
+// we can compare the two arrays, $arrayOne & $arrayTwo
+function compareArrays($arrayOne, $arrayTwo)
 {
     // give an initial value to a new variable
     $numberOfThingsInCommon = 0;
-    // each itiration compares a $person(i name in the array) to the array of $names.
-    foreach($names as $person){
+    // each itiration compares a $person(i name in the array) to the array of $arrayOne.
+    foreach($arrayOne as $person){
         // if that person is in the $compare array then label it true
         // then run the code that increases the index of $numberOfDifferences
-        if (searchArray($person, $compare) == true) {
+        if (searchArray($person, $arrayTwo) == true) {
             $numberOfThingsInCommon++ ;
         }
     }
