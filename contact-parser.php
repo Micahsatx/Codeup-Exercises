@@ -32,13 +32,12 @@ function parseContacts($filename)
         $newArray = [];
         $contactsInfo = explode("|", $person);
         $name = $contactsInfo[0];
-        $number = $contactsInfo[1];
-        // $number = str_replace(3, '-', $name);
+        $number = substr ($contactsInfo[1], 0, 3) . "-" . substr ($contactsInfo[1], 3, 3) . "-" . substr ($contactsInfo[1], 6, 4);
         $newArray = ['name' => $name, 'number' => $number];
         array_push($newContacts, $newArray);
 
-           // string substr ( string $string , int $start [, int $length ] )
-    //     $string = 'bcadef abcdef';
+    // string substr ( string $string , int $start [, int $length ] )
+    // $string = 'bcadef abcdef';
     // $substr = 'a';
     // $attachment = '+++';
 
