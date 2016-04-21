@@ -3,7 +3,7 @@
 $firstArray = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam'];
 $secondArray = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
  
-
+echo 'the combined arrays where order DOES matter' . PHP_EOL; 
 function combineArrays($firstArray, $secondArray)
 {
     // had to create an empty array WITHIN the function so it can access its value
@@ -35,5 +35,12 @@ function combineArrays($firstArray, $secondArray)
 }
 // run the function to make it work!
 combineArrays($firstArray, $secondArray);
+echo '====================================' . PHP_EOL;
+echo 'the combined arrays where order DOESNT matter' . PHP_EOL; 
+combineArraysNoOrder();
 
-
+function combineArraysNoOrder(){  
+    $arrays = array('Tina', 'Dana', 'Mike', 'Amy', 'Adam' => 'Tina', 'Dean', 'Mel', 'Amy', 'Michael');
+    $twoArraysAsOne = array_unique($arrays);
+    print_r($twoArraysAsOne);
+}
