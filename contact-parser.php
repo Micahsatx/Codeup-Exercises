@@ -22,7 +22,7 @@ function dashesAndArrayOfIndividuals($explodedArrayWithName)
     return $associativeArrayWithNameNumber;
 } 
 
-// formatPhoneNumbers
+
 function formatPhoneNumbers($number)
 {
 // inputting the '-' into a specific location in the phone number
