@@ -5,21 +5,15 @@ $filename = 'contacts.txt';
 // this function takes in exploded array then puts them to variables
 // name and number then puts that into an array containing
 // one name and one number
-function dashesAndArrayOfIndividuals($explodedArrayWithNameAndNumber)
+
+// parseIndividual
+function dashesAndArrayOfIndividuals($explodedArrayWithName)
 {
-    // inputting the '-' into a specific location in the phone number
-    // putting the first one in at the start of the string[0] and a length of 3
-    $areaCode = substr ($explodedArrayWithNameAndNumber[1], 0, 3);
-    // putting the second '-' starting at index 3 and going 3 spaces from there
-    $firstThree = substr ($explodedArrayWithNameAndNumber[1], 3, 3);
-    // start at index 6 and go 4 more
-    $lastFour = substr ($explodedArrayWithNameAndNumber[1], 6, 4);
-    // now concatinate the 3 variables with '-' in the middle
-    // assign that into $number
-    $number =  "{$areaCode}-{$firstThree}-{$lastFour}";
-    // name variable and number variable accessed using there index of
-    // $individualsContactInfo
-    $name = $explodedArrayWithNameAndNumber[0];
+    
+    $name = $explodedArrayWithName[0];
+    
+    $number = formatPhoneNumbers($explodedArrayWithName[1]);
+    
     // splitting $individualsContactInfo into 2 arrays within it.  one array that
     // puts the names into names and the numbers into numbers
     // this array split into 2 is now called associativeArrayWithNameNumber
@@ -27,6 +21,25 @@ function dashesAndArrayOfIndividuals($explodedArrayWithNameAndNumber)
     // now push that created split array onto the $finalArrayOfContacts
     return $associativeArrayWithNameNumber;
 } 
+
+// formatPhoneNumbers
+function formatPhoneNumbers($number)
+{
+// inputting the '-' into a specific location in the phone number
+    // putting the first one in at the start of the string[0] and a length of 3
+    $areaCode = substr ($number, 0, 3);
+    // putting the second '-' starting at index 3 and going 3 spaces from there
+    $firstThree = substr ($number, 3, 3);
+    // start at index 6 and go 4 more
+    $lastFour = substr ($number, 6, 4);
+    // now concatinate the 3 variables with '-' in the middle
+    // assign that into $number
+    $number =  "{$areaCode}-{$firstThree}-{$lastFour}";
+    // name variable and number variable accessed using there index of
+    // $individualsContactInfo
+    return $number;
+
+}
 
 
 function parseContacts($filename)
