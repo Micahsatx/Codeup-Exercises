@@ -37,11 +37,10 @@ function parseContacts($filename)
     // filesize is the actualy size of the file
     // and $filename is the variable assigned to the actual file
     $contents = fread($handle, filesize($filename));
-    // needs to happen before the explode so its trimming a string
-    $eachContact = trim($eachContact);
     // the file starts as a string and explodes it into an array of 4
     // then sets it equal to $contacts 
-    $eachContact = explode("\n", $contents);
+    // needs to happen before the explode so its trimming a string
+    $eachContact = explode("\n", trim($contents));
     
     fclose($handle);
     // emtpy array that the array with name and number ($associativeArrayWithNameNumber)
