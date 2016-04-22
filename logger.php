@@ -21,17 +21,17 @@ function logMessage($logLevel, $message)
 }
 
 // message will be provided when the function is called!
-function infoMessage($message)
+function logInfo($message)
 {
     logMessage("INFO", $message);
 }
-infoMessage("This is an INFO message");
+logInfo("This is an INFO message");
 
 // message will be provided when the function is called!
-function errorMessage($message)
+function logError($message)
 {
     logMessage("ERROR", $message);
 }
-errorMessage("This is an ERROR message");
+logError("This is an ERROR message");
 
 
