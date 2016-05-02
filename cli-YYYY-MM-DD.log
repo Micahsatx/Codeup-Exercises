@@ -1,0 +1,9 @@
+2016-05-02 02:03:16[INFO]This is the log level message
+2016-05-02 02:03:16[INFO]This is an INFO message
+2016-05-02 02:03:16[ERROR]This is an ERROR message
+2016-05-02 02:03:27[INFO]This is the log level message
+2016-05-02 02:03:27[INFO]This is an INFO message
+2016-05-02 02:03:27[ERROR]This is an ERROR message
+2016-05-02 02:05:30[INFO]This is the log level message
+2016-05-02 02:05:30[INFO]This is an INFO message
+2016-05-02 02:05:30[ERROR]This is an ERROR message
