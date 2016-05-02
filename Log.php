@@ -7,6 +7,17 @@ class Log
     public $currentDate;
     public $currentTime;
     
+    public function __construct($prefix = 'log')
+    {
+        // make a file name and use a string to say log.2016-05-19.log
+        // $this->filename = "$prefix-$currentDate.log";
+        $this->fileName = "$prefix-YYYY-MM-DD.log";
+
+        // making the connection to the filename specified above
+        $this->handle = fopen($this->fileName, 'a');
+
+    }
+
     public function logMessage($logLevel, $message)
     {
         // get the date
@@ -20,26 +31,6 @@ class Log
         
     }
             
-        
-    public function __construct($prefix)
-    {
-        // $prefix = log;
-        // make a file name and use a string to say log.2016-05-19.log
-        // $this->filename = "$prefix-$currentDate.log";
-        $this->fileName = "$prefix-YYYY-MM-DD.log";
-
-        // making the connection to the filename specified above
-        $this->handle = fopen($this->fileName, 'a');
-
-    }
-
-    public function __destruct()
-    {
-
-        fclose($this->handle);
-        echo "did it work?\n";
-    }
-
     // message will be provided when the function is called!
     public function logInfo($message)
     {
@@ -51,6 +42,14 @@ class Log
     {
         $this->logMessage("ERROR", $message);
     }
+        
+    public function __destruct()
+    {
+
+        fclose($this->handle);
+        echo "did it work?\n";
+    }
+
 }
 
 
