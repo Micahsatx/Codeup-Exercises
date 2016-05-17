@@ -10,9 +10,9 @@ $fileName->logInfo("This is an INFO message");
 $fileName->logError("This is an ERROR message");
 
 // extra practice related to logpractice.php
-$file = new File('file.txt');
-$file->append('hello joshua!');
-$file->closeIt();
+// $file = new File('file.txt');
+// $file->append('hello joshua!');
+// $file->closeIt();
 
 // objects bundle state and behavior together..
 // the name, the info message, the error message.  they all modify the state

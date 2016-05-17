@@ -2,8 +2,8 @@
 
 class Rectangle 
 {
-    public $height;
-    public $width;
+    private $height;
+    private $width;
 
     public function __construct($height, $width)
     {
@@ -11,20 +11,42 @@ class Rectangle
         $this->width = $width;
     }
 
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
     public function area()
     {
         return $this->height * $this->width;
     }
-    
+
     public function perimeter()
     {
         return ($this->height * 2) + ($this->width * 2);
     }
 }
 
-// Add a perimeter() method to your Rectangle class,
-//  and an area() method to your Square class. 
-//  Neither of these should call a parent. Which method is overriding? 
-//  Which one is a base method?
+// Update the Rectangle class from the previous lesson
+//  to contain private properties for height and width.
 
-// Update your shapes_test.php to test the methods in both your Square class and your Rectangle class.
+// Before testing the Rectangle and Square classes,
+//  try to think of the outcomes before executing. 
+//  Will the Rectangle class work as before? What about the Square class?
+//   Create objects from both classes and execute the area() method. 
+//   Did the result meet your expected outcome?
